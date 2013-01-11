@@ -11,7 +11,6 @@
 #import <AVFoundation/AVFoundation.h>
 #import <QTKit/QTKit.h>
 
-#define kImages 200.0
 #define kBarcodeWidth 1280.0f
 #define kBarcodeHeight 480.0f
 
@@ -20,35 +19,57 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    // Init some properties
     _openPanel = [NSOpenPanel openPanel];
-    // Create our empty barcode
+	_savePanel = [NSSavePanel savePanel];
+	[self.savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"png"]];
+
     [self.saveButton setTarget:self];
-    [self.saveButton setAction:@selector(saveImage)];
-    [self.saveButton setEnabled:NO];
+    [self.saveButton setAction:@selector(saveButtonPressed:)];
+	
+	[self.openButton setTarget:self];
+    [self.openButton setAction:@selector(openButtonPressed:)];
     
-    _barcodeImage = [[NSImage alloc] initWithSize:(NSSize){(float)kBarcodeWidth, (float)kBarcodeHeight}];
-    _imageArray = [NSMutableArray arrayWithCapacity:10];
-    self.barcodeImage.backgroundColor = [NSColor blackColor];
-    [self.progressBar setMaxValue:kImages];
-	[self performSelectorInBackground:@selector(processMovie) withObject:nil];
+	[self reset];
+	
 }
 
-- (void)processMovie {
-    QTMovie *movie = [QTMovie movieWithURL:[self fileURL] error:NULL];
+- (void)reset {
+	_barcodeImage = [[NSImage alloc] initWithSize:(NSSize){(float)kBarcodeWidth, (float)kBarcodeHeight}];
+    _imageArray = [NSMutableArray arrayWithCapacity:10];
+	
+	self.numberOfFrames = MAX(1, self.framesTextField.integerValue);
+    [self.progressBar setMaxValue:self.numberOfFrames];
+	[self.progressBar setDoubleValue:0];
+	[self.saveButton setEnabled:NO];
+}
+
+- (void)processMovie:(NSURL *)fileURL {
+	// Set the number of frames, minimum of 1
+	self.numberOfFrames = MAX(1, self.framesTextField.integerValue);
+	
+	// Unhide the progress bar
+	[self.progressBar setHidden:NO];
+	self.progressLabel.stringValue = @"Grabbing frames...";
+	
+	// Create the QTMovie object
+    QTMovie *movie = [QTMovie movieWithURL:fileURL error:NULL];
     NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-    
-	// We'll specify a custom size of 95 X 120 for the returned image:
-	NSSize imageSize = NSMakeSize(ceilf(kBarcodeWidth/(float)kImages), kBarcodeHeight);
-    //NSSize imageSize = NSMakeSize(47.3f, 112.0f);
+		
+	// Determine the image size
+	NSSize imageSize = NSMakeSize(ceilf(kBarcodeWidth/(float)self.numberOfFrames), kBarcodeHeight);
 	NSValue *sizeValue = [NSValue valueWithSize:imageSize];
 	[attributes setObject:sizeValue forKey:QTMovieFrameImageSize];
     
+	// Get the movie duration
     QTTime duration = movie.duration;
-    for (int i=0; i<kImages; i++) {
+	
+	//Starting grabbing frames
+    for (int i=0; i<self.numberOfFrames; i++) {
         NSError *error;
-        NSImage *tempImage = [movie frameImageAtTime:QTMakeTime(duration.timeValue*((float)i/(float)kImages), duration.timeScale) withAttributes:attributes error:&error];
+        NSImage *tempImage = [movie frameImageAtTime:QTMakeTime(duration.timeValue*((float)i/(float)self.numberOfFrames), duration.timeScale) withAttributes:attributes error:&error];
         if (tempImage) {
+			// Add the image to our array
             [self.imageArray addObject:tempImage];
         }
         if (error) {
@@ -56,43 +77,75 @@
         }
         [self performSelectorOnMainThread:@selector(incrementProgressBar) withObject:nil waitUntilDone:YES];
     }
-    [self done];
+	
+	// Do post processing
+    [self createBarcodeImage];
 }
 
 - (void)incrementProgressBar {
     [self.progressBar incrementBy:1.0];
 }
 
-- (void)saveImage {
+- (void)saveButtonPressed:(id)sender {
+	[self.savePanel beginWithCompletionHandler:^(NSInteger result) {
+		[self saveImage:[self.savePanel URL]];
+	}];
+}
+
+- (void)openButtonPressed:(id)sender {
+	[self.openPanel beginWithCompletionHandler:^(NSInteger result) {
+		[self reset];
+        [self performSelectorInBackground:@selector(processMovie:) withObject:[self.openPanel URL]];
+	}];
+}
+
+- (void)saveImage:(NSURL *)saveURL {
     // Cache the reduced image
     NSData *imageData = [self.barcodeImage TIFFRepresentation];
     NSBitmapImageRep *imageRep = [NSBitmapImageRep imageRepWithData:imageData];
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:[NSNumber numberWithFloat:1.0] forKey:NSImageCompressionFactor];
     imageData = [imageRep representationUsingType:NSPNGFileType properties:imageProps];
-    [imageData writeToFile:[NSString stringWithFormat:@"/Users/cnowacek/Desktop/image_%d.png", (int)[[NSDate date] timeIntervalSince1970]] atomically:NO];
+    [imageData writeToFile:[saveURL path] atomically:NO];
     return;
 }
 
-- (void)done {
-    NSLog(@"DONE!");
+- (void)createBarcodeImage {
     float x = 0.0;
-    
+	
+	// Set our prgress bar properties
+	self.progressLabel.stringValue = @"Pasting frames...";
+    [self.progressBar setMaxValue:self.imageArray.count];
+	[self.progressBar setDoubleValue:0];
+	
+	// Iterate over the images we grabbed
     for (NSImage *imageFromMovie in self.imageArray) {
         
+		// Lock focus and paste the image
         [self.barcodeImage lockFocus];
         [imageFromMovie drawAtPoint:(NSPoint){x, 0.0} fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
         [self.barcodeImage unlockFocus];
+		
+		// Move the new x location over
         x += imageFromMovie.size.width;
+		
+		// Increment the progress bar
+		[self incrementProgressBar];
     }
+	
+	// Image is ready to be displayed
     [self.imageView setImage:self.barcodeImage];
+	
+	// Cleanup UI elements
     [self.saveButton setEnabled:YES];
+	[self.progressBar setHidden:YES];
+	self.progressLabel.stringValue = @"";
 }
 
 - (IBAction)openFile:(NSMenuItem *)sender {
     [self.openPanel beginWithCompletionHandler:^(NSInteger result) {
-        
+		[self reset];
+        [self performSelectorInBackground:@selector(processMovie:) withObject:[self.openPanel URL]];
     }];
-    [self.openPanel URL];
     return;
 }
 

@@ -17,6 +17,10 @@
 @property (assign) int pointX;
 @property (strong) IBOutlet NSProgressIndicator *progressBar;
 @property (strong) IBOutlet NSButton *saveButton;
+@property (weak) IBOutlet NSButton *openButton;
 @property (strong) NSOpenPanel *openPanel;
-
+@property (strong) NSSavePanel *savePanel;
+@property (weak) IBOutlet NSTextField *framesTextField;
+@property (weak) IBOutlet NSTextField *progressLabel;
+@property (assign) int numberOfFrames;
 @end

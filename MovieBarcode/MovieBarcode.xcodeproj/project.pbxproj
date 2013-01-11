@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C5AC888F16A07E180095643B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC888E16A07E180095643B /* Cocoa.framework */; };
+		C5AC889916A07E180095643B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5AC889716A07E180095643B /* InfoPlist.strings */; };
+		C5AC889B16A07E180095643B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AC889A16A07E180095643B /* main.m */; };
+		C5AC889F16A07E190095643B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = C5AC889D16A07E190095643B /* Credits.rtf */; };
+		C5AC88A216A07E190095643B /* MBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AC88A116A07E190095643B /* MBAppDelegate.m */; };
+		C5AC88A516A07E190095643B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5AC88A316A07E190095643B /* MainMenu.xib */; };
+		C5AC88AD16A07E190095643B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC88AC16A07E190095643B /* SenTestingKit.framework */; };
+		C5AC88AE16A07E190095643B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC888E16A07E180095643B /* Cocoa.framework */; };
+		C5AC88B616A07E190095643B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5AC88B416A07E190095643B /* InfoPlist.strings */; };
+		C5AC88B916A07E190095643B /* MovieBarcodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AC88B816A07E190095643B /* MovieBarcodeTests.m */; };
+		C5AC88C316A07EA40095643B /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC88C216A07EA40095643B /* QTKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5AC88AF16A07E190095643B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5AC888316A07E180095643B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5AC888A16A07E180095643B;
+			remoteInfo = MovieBarcode;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C5AC888B16A07E180095643B /* MovieBarcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBarcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AC888E16A07E180095643B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C5AC889116A07E180095643B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C5AC889216A07E180095643B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C5AC889316A07E180095643B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C5AC889616A07E180095643B /* MovieBarcode-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieBarcode-Info.plist"; sourceTree = "<group>"; };
+		C5AC889816A07E180095643B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C5AC889A16A07E180095643B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C5AC889C16A07E190095643B /* MovieBarcode-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieBarcode-Prefix.pch"; sourceTree = "<group>"; };
+		C5AC889E16A07E190095643B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		C5AC88A016A07E190095643B /* MBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAppDelegate.h; sourceTree = "<group>"; };
+		C5AC88A116A07E190095643B /* MBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAppDelegate.m; sourceTree = "<group>"; };
+		C5AC88A416A07E190095643B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		C5AC88AB16A07E190095643B /* MovieBarcodeTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieBarcodeTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5AC88AC16A07E190095643B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C5AC88B316A07E190095643B /* MovieBarcodeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MovieBarcodeTests-Info.plist"; sourceTree = "<group>"; };
+		C5AC88B516A07E190095643B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C5AC88B716A07E190095643B /* MovieBarcodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieBarcodeTests.h; sourceTree = "<group>"; };
+		C5AC88B816A07E190095643B /* MovieBarcodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieBarcodeTests.m; sourceTree = "<group>"; };
+		C5AC88C216A07EA40095643B /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5AC888816A07E180095643B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC88C316A07EA40095643B /* QTKit.framework in Frameworks */,
+				C5AC888F16A07E180095643B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5AC88A716A07E190095643B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC88AD16A07E190095643B /* SenTestingKit.framework in Frameworks */,
+				C5AC88AE16A07E190095643B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C5AC888216A07E180095643B = {
+			isa = PBXGroup;
+			children = (
+				C5AC88C216A07EA40095643B /* QTKit.framework */,
+				C5AC889416A07E180095643B /* MovieBarcode */,
+				C5AC88B116A07E190095643B /* MovieBarcodeTests */,
+				C5AC888D16A07E180095643B /* Frameworks */,
+				C5AC888C16A07E180095643B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C5AC888C16A07E180095643B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC888B16A07E180095643B /* MovieBarcode.app */,
+				C5AC88AB16A07E190095643B /* MovieBarcodeTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5AC888D16A07E180095643B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC888E16A07E180095643B /* Cocoa.framework */,
+				C5AC88AC16A07E190095643B /* SenTestingKit.framework */,
+				C5AC889016A07E180095643B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5AC889016A07E180095643B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC889116A07E180095643B /* AppKit.framework */,
+				C5AC889216A07E180095643B /* CoreData.framework */,
+				C5AC889316A07E180095643B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C5AC889416A07E180095643B /* MovieBarcode */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC88A016A07E190095643B /* MBAppDelegate.h */,
+				C5AC88A116A07E190095643B /* MBAppDelegate.m */,
+				C5AC88A316A07E190095643B /* MainMenu.xib */,
+				C5AC889516A07E180095643B /* Supporting Files */,
+			);
+			path = MovieBarcode;
+			sourceTree = "<group>";
+		};
+		C5AC889516A07E180095643B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC889616A07E180095643B /* MovieBarcode-Info.plist */,
+				C5AC889716A07E180095643B /* InfoPlist.strings */,
+				C5AC889A16A07E180095643B /* main.m */,
+				C5AC889C16A07E190095643B /* MovieBarcode-Prefix.pch */,
+				C5AC889D16A07E190095643B /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5AC88B116A07E190095643B /* MovieBarcodeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC88B716A07E190095643B /* MovieBarcodeTests.h */,
+				C5AC88B816A07E190095643B /* MovieBarcodeTests.m */,
+				C5AC88B216A07E190095643B /* Supporting Files */,
+			);
+			path = MovieBarcodeTests;
+			sourceTree = "<group>";
+		};
+		C5AC88B216A07E190095643B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5AC88B316A07E190095643B /* MovieBarcodeTests-Info.plist */,
+				C5AC88B416A07E190095643B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5AC888A16A07E180095643B /* MovieBarcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5AC88BC16A07E190095643B /* Build configuration list for PBXNativeTarget "MovieBarcode" */;
+			buildPhases = (
+				C5AC888716A07E180095643B /* Sources */,
+				C5AC888816A07E180095643B /* Frameworks */,
+				C5AC888916A07E180095643B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MovieBarcode;
+			productName = MovieBarcode;
+			productReference = C5AC888B16A07E180095643B /* MovieBarcode.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5AC88AA16A07E190095643B /* MovieBarcodeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5AC88BF16A07E190095643B /* Build configuration list for PBXNativeTarget "MovieBarcodeTests" */;
+			buildPhases = (
+				C5AC88A616A07E190095643B /* Sources */,
+				C5AC88A716A07E190095643B /* Frameworks */,
+				C5AC88A816A07E190095643B /* Resources */,
+				C5AC88A916A07E190095643B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5AC88B016A07E190095643B /* PBXTargetDependency */,
+			);
+			name = MovieBarcodeTests;
+			productName = MovieBarcodeTests;
+			productReference = C5AC88AB16A07E190095643B /* MovieBarcodeTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5AC888316A07E180095643B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MB;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Charlie Nowacek";
+			};
+			buildConfigurationList = C5AC888616A07E180095643B /* Build configuration list for PBXProject "MovieBarcode" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C5AC888216A07E180095643B;
+			productRefGroup = C5AC888C16A07E180095643B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5AC888A16A07E180095643B /* MovieBarcode */,
+				C5AC88AA16A07E190095643B /* MovieBarcodeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5AC888916A07E180095643B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC889916A07E180095643B /* InfoPlist.strings in Resources */,
+				C5AC889F16A07E190095643B /* Credits.rtf in Resources */,
+				C5AC88A516A07E190095643B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5AC88A816A07E190095643B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC88B616A07E190095643B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C5AC88A916A07E190095643B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5AC888716A07E180095643B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC889B16A07E180095643B /* main.m in Sources */,
+				C5AC88A216A07E190095643B /* MBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5AC88A616A07E190095643B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AC88B916A07E190095643B /* MovieBarcodeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5AC88B016A07E190095643B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5AC888A16A07E180095643B /* MovieBarcode */;
+			targetProxy = C5AC88AF16A07E190095643B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C5AC889716A07E180095643B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5AC889816A07E180095643B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C5AC889D16A07E190095643B /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5AC889E16A07E190095643B /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		C5AC88A316A07E190095643B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5AC88A416A07E190095643B /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		C5AC88B416A07E190095643B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5AC88B516A07E190095643B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5AC88BA16A07E190095643B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C5AC88BB16A07E190095643B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C5AC88BD16A07E190095643B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
+				INFOPLIST_FILE = "MovieBarcode/MovieBarcode-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C5AC88BE16A07E190095643B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
+				INFOPLIST_FILE = "MovieBarcode/MovieBarcode-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C5AC88C016A07E190095643B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieBarcode.app/Contents/MacOS/MovieBarcode";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
+				INFOPLIST_FILE = "MovieBarcodeTests/MovieBarcodeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C5AC88C116A07E190095643B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MovieBarcode.app/Contents/MacOS/MovieBarcode";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
+				INFOPLIST_FILE = "MovieBarcodeTests/MovieBarcodeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5AC888616A07E180095643B /* Build configuration list for PBXProject "MovieBarcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5AC88BA16A07E190095643B /* Debug */,
+				C5AC88BB16A07E190095643B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5AC88BC16A07E190095643B /* Build configuration list for PBXNativeTarget "MovieBarcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5AC88BD16A07E190095643B /* Debug */,
+				C5AC88BE16A07E190095643B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C5AC88BF16A07E190095643B /* Build configuration list for PBXNativeTarget "MovieBarcodeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5AC88C016A07E190095643B /* Debug */,
+				C5AC88C116A07E190095643B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C5AC888316A07E180095643B /* Project object */;
+}

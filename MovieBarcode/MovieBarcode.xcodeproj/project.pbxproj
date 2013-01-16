@@ -18,6 +18,7 @@
 		C5AC88B616A07E190095643B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5AC88B416A07E190095643B /* InfoPlist.strings */; };
 		C5AC88B916A07E190095643B /* MovieBarcodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AC88B816A07E190095643B /* MovieBarcodeTests.m */; };
 		C5AC88C316A07EA40095643B /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AC88C216A07EA40095643B /* QTKit.framework */; };
+		C5C6BEEE16A6875D00B7F256 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C6BEED16A6875D00B7F256 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		C5AC88B716A07E190095643B /* MovieBarcodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieBarcodeTests.h; sourceTree = "<group>"; };
 		C5AC88B816A07E190095643B /* MovieBarcodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieBarcodeTests.m; sourceTree = "<group>"; };
 		C5AC88C216A07EA40095643B /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		C5C6BEEB16A6875000B7F256 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C5C6BEED16A6875D00B7F256 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5C6BEEE16A6875D00B7F256 /* QuartzCore.framework in Frameworks */,
 				C5AC88C316A07EA40095643B /* QTKit.framework in Frameworks */,
 				C5AC888F16A07E180095643B /* Cocoa.framework in Frameworks */,
 			);
@@ -78,6 +82,8 @@
 		C5AC888216A07E180095643B = {
 			isa = PBXGroup;
 			children = (
+				C5C6BEED16A6875D00B7F256 /* QuartzCore.framework */,
+				C5C6BEEB16A6875000B7F256 /* CoreGraphics.framework */,
 				C5AC88C216A07EA40095643B /* QTKit.framework */,
 				C5AC889416A07E180095643B /* MovieBarcode */,
 				C5AC88B116A07E190095643B /* MovieBarcodeTests */,
@@ -391,6 +397,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
 				INFOPLIST_FILE = "MovieBarcode/MovieBarcode-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -403,6 +410,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MovieBarcode/MovieBarcode-Prefix.pch";
 				INFOPLIST_FILE = "MovieBarcode/MovieBarcode-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,6 +465,7 @@
 				C5AC88BE16A07E190095643B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5AC88BF16A07E190095643B /* Build configuration list for PBXNativeTarget "MovieBarcodeTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +474,7 @@
 				C5AC88C116A07E190095643B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -17,10 +17,16 @@
 @property (assign) int pointX;
 @property (strong) IBOutlet NSProgressIndicator *progressBar;
 @property (strong) IBOutlet NSButton *saveButton;
-@property (weak) IBOutlet NSButton *openButton;
+@property (strong) IBOutlet NSButton *openButton;
+@property (strong) IBOutlet NSButton *processButton;
 @property (strong) NSOpenPanel *openPanel;
 @property (strong) NSSavePanel *savePanel;
-@property (weak) IBOutlet NSTextField *framesTextField;
-@property (weak) IBOutlet NSTextField *progressLabel;
-@property (assign) int numberOfFrames;
+@property (strong) IBOutlet NSTextField *framesTextField;
+@property (strong) IBOutlet NSTextField *progressLabel;
+@property (strong) IBOutlet NSTextField *fileNameLabel;
+@property (strong) IBOutlet NSTextField *imageWidthTextField;
+@property (strong) IBOutlet NSTextField *imageHeightTextField;
+@property (assign) NSUInteger numberOfFrames;
+@property (assign) NSUInteger imageWidth;
+@property (assign) NSUInteger imageHeight;
 @end
